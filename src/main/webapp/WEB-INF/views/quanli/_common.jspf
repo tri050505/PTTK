@@ -1,0 +1,27 @@
+<%@page pageEncoding="UTF-8"%>
+<%!
+    /** Escape HTML. */
+    private String esc(String s) {
+        if (s == null) return "";
+        return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace("\"", "&quot;");
+    }
+    /** Tiền: 1.234.567 đ */
+    private String money(float f) {
+        java.text.DecimalFormatSymbols sym = new java.text.DecimalFormatSymbols();
+        sym.setGroupingSeparator('.');
+        return new java.text.DecimalFormat("#,##0", sym).format(Math.round((double) f)) + " đ";
+    }
+    /** Ngày: dd/MM/yyyy */
+    private String dmy(java.util.Date d) {
+        return d == null ? "" : new java.text.SimpleDateFormat("dd/MM/yyyy").format(d);
+    }
+%>
+<%
+    // Chỉ nhân viên quản lí đã đăng nhập mới được vào các trang trong gói quanli
+    Object sessionMember = session.getAttribute("member");
+    if (sessionMember == null || !"manager".equals(((model.Member9) sessionMember).getRole())) {
+        response.sendRedirect(request.getContextPath() + "/login");
+        return;
+    }
+    model.Member9 currentMember = (model.Member9) sessionMember;
+%>

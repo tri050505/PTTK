@@ -1,0 +1,22 @@
+### Build ###
+target/
+out/
+build/
+!.mvn/wrapper/maven-wrapper.jar
+
+### IDE (cấu hình riêng từng máy) ###
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+.classpath
+.project
+.settings/
+
+### Cấu hình CSDL riêng của máy (chứa mật khẩu) ###
+src/main/resources/db-local.properties
+
+### OS ###
+.DS_Store
+Thumbs.db

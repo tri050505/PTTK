@@ -1,0 +1,3 @@
+# Chép file này thành db-local.properties rồi sửa cho đúng MySQL trên máy bạn.
+db.user=root
+db.password=MAT_KHAU_MYSQL_CUA_BAN

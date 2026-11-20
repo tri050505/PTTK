@@ -1,0 +1,12 @@
+<%@page pageEncoding="UTF-8"%>
+<header>
+    <div class="nav">
+        <a class="brand" href="${pageContext.request.contextPath}/manager">ShopMan &middot; Quản lí</a>
+        <ul>
+            <li><a class="link" href="${pageContext.request.contextPath}/manager">Trang chủ</a></li>
+            <li><a class="link" href="${pageContext.request.contextPath}/manager/reports">Xem báo cáo</a></li>
+            <li><span class="who">Xin chào, <%= esc(currentMember.getFullName()) %></span></li>
+            <li><a class="link" href="${pageContext.request.contextPath}/logout">Đăng xuất</a></li>
+        </ul>
+    </div>
+</header>
